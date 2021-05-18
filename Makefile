@@ -71,11 +71,6 @@ else ifeq ($(COIN),dogecoin)
 DEFINES   += BIP44_COIN_TYPE=3 BIP44_COIN_TYPE_2=3 COIN_P2PKH_VERSION=30 COIN_P2SH_VERSION=22 COIN_FAMILY=1 COIN_COINID=\"Dogecoin\" COIN_COINID_HEADER=\"DOGECOIN\" COIN_COLOR_HDR=0x65D196 COIN_COLOR_DB=0xB2E8CB COIN_COINID_NAME=\"Dogecoin\" COIN_COINID_SHORT=\"DOGE\" COIN_KIND=COIN_KIND_DOGE
 APPNAME ="Dogecoin"
 APP_LOAD_PARAMS += --path $(APP_PATH)
-else ifeq ($(COIN),verge)
-# Verge
-DEFINES   += COIN_P2PKH_VERSION=30 COIN_P2SH_VERSION=33 COIN_FAMILY=2 COIN_COINID=\"Verge\" COIN_COINID_HEADER=\"VERGE\" COIN_COLOR_HDR=0x1FDCE2 COIN_COLOR_DB=0x06A8C9 COIN_COINID_NAME=\"Verge\" COIN_COINID_SHORT=\"XVG\" COIN_KIND=COIN_KIND_VERGE COIN_FLAGS=FLAG_PEERCOIN_UNITS\|FLAG_PEERCOIN_SUPPORT
-APPNAME ="Verge"
-APP_LOAD_PARAMS += --path $(APP_PATH)
 else ifeq ($(COIN),dash)
 # Dash
 DEFINES   += BIP44_COIN_TYPE=5 BIP44_COIN_TYPE_2=5 COIN_P2PKH_VERSION=76 COIN_P2SH_VERSION=16 COIN_FAMILY=1 COIN_COINID=\"DarkCoin\" COIN_COINID_HEADER=\"DASH\" COIN_COLOR_HDR=0x0E76AA COIN_COLOR_DB=0x87BBD5 COIN_COINID_NAME=\"Dash\" COIN_COINID_SHORT=\"DASH\" COIN_KIND=COIN_KIND_DASH
@@ -187,9 +182,14 @@ else ifeq ($(COIN),ravencoin)
 DEFINES   += BIP44_COIN_TYPE=175  BIP44_COIN_TYPE_2=175 COIN_P2PKH_VERSION=60 COIN_P2SH_VERSION=122 COIN_FAMILY=1 COIN_COINID=\"Ravencoin\" COIN_COINID_HEADER=\"RAVENCOIN\" COIN_COLOR_HDR=0x2E4A80 COIN_COLOR_DB=0x74829E COIN_COINID_NAME=\"Ravencoin\" COIN_COINID_SHORT=\"RVN\" COIN_KIND=COIN_KIND_RAVENCOIN
 APPNAME ="Ravencoin"
 APP_LOAD_PARAMS += --path $(APP_PATH)
+else ifeq ($(COIN),verge)
+# Verge
+DEFINES   += BIP44_COIN_TYPE=77 BIP44_COIN_TYPE_2=77 COIN_P2PKH_VERSION=30 COIN_P2SH_VERSION=33 COIN_FAMILY=2 COIN_COINID=\"Verge\" COIN_COINID_HEADER=\"VERGE\" COIN_COLOR_HDR=0x1FDCE2 COIN_COLOR_DB=0x06A8C9 COIN_COINID_NAME=\"Verge\" COIN_COINID_SHORT=\"XVG\" COIN_KIND=COIN_KIND_VERGE COIN_FLAGS=FLAG_PEERCOIN_UNITS\|FLAG_PEERCOIN_SUPPORT
+APPNAME ="Verge"
+APP_LOAD_PARAMS += --path $(APP_PATH)
 else
 ifeq ($(filter clean,$(MAKECMDGOALS)),)
-$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, bitcoin_gold, litecoin, dogecoin, dash, zcash, horizen, komodo, stratis, peercoin, pivx, viacoin, vertcoin, stealth, digibyte, qtum, bitcoin_private, zcoin, gamecredits, zclassic, xsn, nix, lbry, resistance, ravencoin)
+$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, bitcoin_gold, litecoin, dogecoin, dash, zcash, horizen, komodo, stratis, peercoin, pivx, viacoin, vertcoin, stealth, digibyte, qtum, bitcoin_private, zcoin, gamecredits, zclassic, xsn, nix, lbry, resistance, ravencoin, verge)
 endif
 endif
 
